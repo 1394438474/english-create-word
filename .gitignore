@@ -1,0 +1,59 @@
+# ============================================================
+# SmartVocab 智绘记 - Git Ignore
+# ============================================================
+
+# ---------- 后端 (Spring Boot / Maven) ----------
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/app.out.log
+backend/app.err.log
+backend/logs/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# ---------- 前端 (Vue3 / Vite) ----------
+frontend/node_modules/
+frontend/dist/
+frontend/vite.out.log
+frontend/vite.err.log
+frontend/.env.local
+frontend/.env.*.local
+
+# ---------- 数据库 / 缓存 ----------
+# （smartvocab.sql 含 21100 词，提交到仓库方便其他环境导入；如需排除则解开下行）
+# db/smartvocab.sql
+
+# ---------- Python 脚本 ----------
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+scripts/data/
+.venv/
+venv/
+
+# ---------- 通用 ----------
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# 环境变量 / 凭据
+.env
+.env.local
+*.pem
+*.key
+
+# 系统文件
+desktop.ini
+$RECYCLE.BIN/
+
+# Windows
+*.lnk
