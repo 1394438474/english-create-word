@@ -14,7 +14,7 @@
     <div v-if="list.length">
       <div class="vocab-list">
         <div v-for="(item, i) in list" :key="item.word.id" class="vocab-card fade-up" :style="{ animationDelay: (i*0.04) + 's' }">
-          <el-checkbox v-model="selection" :value="item.word.id" class="vocab-check" />
+          <el-checkbox :model-value="isSelected(item.word.id)" @change="(v: any) => onSelChange(item.word.id, v)" class="vocab-check" />
           <div class="vocab-img" :style="{ backgroundImage: `url(${item.word.imageUrl})` }"></div>
           <div class="vocab-body">
             <div class="vocab-head">
@@ -91,6 +91,17 @@ async function onExport() {
   a.href = url; a.download = `vocab-${Date.now()}.json`; a.click()
   URL.revokeObjectURL(url)
   ElMessage.success('已导出')
+}
+
+function isSelected(id: number) {
+  return selection.value.includes(id)
+}
+
+function onSelChange(id: number, v: any) {
+  const checked = Boolean(v)
+  const idx = selection.value.indexOf(id)
+  if (checked && idx === -1) selection.value.push(id)
+  else if (!checked && idx !== -1) selection.value.splice(idx, 1)
 }
 
 function goStudy(item: any) {

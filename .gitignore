@@ -25,8 +25,8 @@ frontend/.env.local
 frontend/.env.*.local
 
 # ---------- 数据库 / 缓存 ----------
-# （smartvocab.sql 含 21100 词，提交到仓库方便其他环境导入；如需排除则解开下行）
-# db/smartvocab.sql
+# smartvocab.sql 含 26600 词，提交到仓库方便其他环境导入
+db/dump_err.log
 
 # ---------- Python 脚本 ----------
 __pycache__/

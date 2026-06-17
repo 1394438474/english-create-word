@@ -69,7 +69,7 @@
         <p class="text-mute">{{ typeMap[quiz.type] }} · 共 {{ result.total }} 题，答对 {{ result.correct }} 题</p>
         <div class="result-stats">
           <div><b class="mono text-accent">{{ result.correct }}</b><span>答对</span></div>
-          <div><b class="mono text-danger">{{ result.total - result.correct }}</b><span>答错</span></div>
+          <div><b class="mono text-danger">{{ (result.total ?? 0) - (result.correct ?? 0) }}</b><span>答错</span></div>
           <div><b class="mono">{{ result.score }}%</b><span>正确率</span></div>
         </div>
         <div class="result-actions">

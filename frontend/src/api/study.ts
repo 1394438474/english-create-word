@@ -3,7 +3,7 @@ import type { WordCard } from './book'
 
 export interface QuizOption { label: string; text: string; imageUrl?: string }
 export interface QuizQuestion { wordId: number; spelling: string; phonetic: string; imageUrl: string; prompt: string; options: QuizOption[]; answerIndex: number }
-export interface QuizDTO { type: string; bookId: number; size: number; questions: QuizQuestion[]; total?: number; correct?: number; score?: number; durationMs?: number }
+export interface QuizDTO { type: string; bookId: number; size: number; questions: QuizQuestion[]; total?: number; correct?: number; score?: number; durationMs?: number; chosenLabels?: Record<number, string> }
 
 export const errorBookApi = {
   list: (quizType?: string) => request.get<any, WordCard[]>('/errorbook', { params: { quizType } }),

@@ -13,7 +13,7 @@
         <div class="progress"><div class="progress-fill" :style="{ width: progress + '%' }"></div></div>
       </div>
       <div class="top-actions">
-        <el-button text @click="onSkip" :icon="VideoPlay">跳过</el-button>
+        <el-button text @click="onSkip">跳过 →</el-button>
       </div>
     </header>
 

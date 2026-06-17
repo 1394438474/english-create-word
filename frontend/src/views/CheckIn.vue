@@ -5,7 +5,7 @@
         <h1 class="page-title">打卡日历</h1>
         <p class="page-subtitle">每一次坚持，都在塑造更好的自己</p>
       </div>
-      <button class="btn-primary" @click="onCheckIn" :disabled="todayChecked">
+      <button class="btn-primary" @click="onCheckIn" :disabled="Boolean(todayChecked)">
         <el-icon><Check /></el-icon>
         {{ todayChecked ? '今日已打卡' : '立即打卡' }}
       </button>
